@@ -1,4 +1,4 @@
-<h3>Testes baseados na especificação da problemática:<h3>
+<h3>Testes baseados na especificação da problemática:</h3>
   Variáveis de entrada: <i>Composição</i> (5% de aditivo, 25% de álcool, 70% de gasolina);
  
 <b>A gasolina só é vendida se: SE EMERGÊNCIA FOR <n>TRUE<n></b><br>
