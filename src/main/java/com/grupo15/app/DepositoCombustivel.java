@@ -53,7 +53,7 @@ public class DepositoCombustivel {
   }
 
   public int[] encomendaCombustivel(int qtdade, boolean emerg) {
-    // TODO
+
     return null;
   }
 
