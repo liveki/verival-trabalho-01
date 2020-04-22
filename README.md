@@ -17,29 +17,27 @@
 
 <h3>Testes sem valores limites: SE EMERGÊNCIA FOR TRUE</h3>
 
-
-Variáveis de entrada: <b>{ tAditivo, tGasolina, T1Alcool, T2Alcool } = qtdade;</b>
-
+Variáveis de entrada: <b>{ tAditivo, tGasolina, tAlcool1, tAlcool2 } = qtdade;</b>
 
 Classes de equivalência:<br>
 
-| Classe | Variável | Resultado |
-| :------: | :--------: | :---------: |
-| C1     | tAditivo == 0 | Falta aditivo |
-| C2     | tGasolina == 0| Falta gasolina |
-| C3     | ( tAlcool1 + tAlcool2) == 0 | Falta álcool |
-| C4     | todas as variáveis > 0 | Pode ser encomendado |
-| C5     | qtdade <= 0 | Quantidade inválida |
+| Classe |          Variável           |      Resultado       |
+| :----: | :-------------------------: | :------------------: |
+|   C1   |        tAditivo == 0        |    Falta aditivo     |
+|   C2   |       tGasolina == 0        |    Falta gasolina    |
+|   C3   | ( tAlcool1 + tAlcool2) == 0 |     Falta álcool     |
+|   C4   |   todas as variáveis > 0    | Pode ser encomendado |
+|   C5   |         qtdade <= 0         | Quantidade inválida  |
 
 <h3>Testes com valores limites: SE EMERGÊNCIA FOR FALSE</h3>
 
-Variáveis de entrada: <b>{ tAditivo, tGasolina, T1Alcool, T2Alcool } = qtdade;</b>
+Variáveis de entrada: <b>{ tAditivo, tGasolina, tAlcool1, tAlcool2 } = qtdade;</b>
 
 Classes de equivalência:
 
-|Classe|Variável|On-point|Off-point|In-points|Out-points|
-|:----:|:------:|:------:|:-------:|:-------:|:--------:|
-|C1|tAditivo|125|126|126 >= ... <= 500|... <= 500|
-|C2|tGasolina|2500|2501|2501 >= ... <= 10.000|... <= 2500|
-|C3|(tAlcool1 + tAlcool2)|625|626|626 ... <= 2500|... <= 625|
-|C4|qtdade|0|1|1 >= ... <= 13000|... <= 0|
+| Classe |       Variável        | On-point | Off-point |       In-points       | Out-points  |
+| :----: | :-------------------: | :------: | :-------: | :-------------------: | :---------: |
+|   C1   |       tAditivo        |   125    |    126    |   126 >= ... <= 500   | ... <= 500  |
+|   C2   |       tGasolina       |   2500   |   2501    | 2501 >= ... <= 10.000 | ... <= 2500 |
+|   C3   | (tAlcool1 + tAlcool2) |   625    |    626    |    626 ... <= 2500    | ... <= 625  |
+|   C4   |        qtdade         |    0     |     1     |   1 >= ... <= 13000   |  ... <= 0   |
