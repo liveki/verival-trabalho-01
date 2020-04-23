@@ -10,11 +10,15 @@ public class DepositoCombustivel {
   private int tAlcool1;
   private int tAlcool2;
 
-  public DepositoCombustivel(int tGasolina,int tAditivo,int tAlcool1,int tAlcool2){
-      this.tGasolina = tGasolina;
-      this.tAditivo = tAditivo;
-      this.tAlcool1 = tAlcool1;
-      this.tAlcool2 = tAlcool2;
+  public DepositoCombustivel(int tGasolina, int tAditivo, int tAlcool1, int tAlcool2){
+    tGasolina = tGasolina < 0 ? 0 : tGasolina;
+    tAditivo = tAditivo < 0 ? 0 : tAditivo;
+    tAlcool1 = tAlcool1 < 0 ? 0 : tAlcool1;
+    tAlcool2 = tAlcool2 < 0 ? 0 : tAlcool2;
+    this.tGasolina = tGasolina > MAX_GASOLINA ? MAX_GASOLINA : tGasolina;
+    this.tAditivo = tAditivo > MAX_ADITIVO ? MAX_ADITIVO : tAditivo;
+    this.tAlcool1 = tAlcool1 > MAX_ALCOOL/2 ? MAX_ALCOOL/2 : tAlcool1;
+    this.tAlcool2 = tAlcool2 > MAX_ALCOOL/2 ? MAX_ALCOOL/2 : tAlcool2;
   }
 
   public int gettGasolina(){ return tGasolina; }
@@ -46,8 +50,8 @@ public class DepositoCombustivel {
     if (qtdade < 0) return result;
     result[0] = 0;
 
-    int qtGasolina = (int) (qtdade * 0.7);
     int qtAditivo = (int) (qtdade * 0.05);
+    int qtGasolina = (int) (qtdade * 0.7);
     int qtAlcool = (int) (qtdade * 0.25);
     if (!canRemoveAditivo(qtAditivo, emerg)) { result[0] = -1; return result; }
     if (!canRemoveGas(qtGasolina, emerg)) { result[1] = -1; return result; }
