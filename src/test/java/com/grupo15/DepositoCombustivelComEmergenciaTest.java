@@ -1,10 +1,8 @@
-package com.grupo15.app;
+package com.grupo15;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 // TESTES COM EMERGÊNCIA NACIONAL
 public class DepositoCombustivelComEmergenciaTest {
@@ -32,7 +30,7 @@ public class DepositoCombustivelComEmergenciaTest {
     final int expected = -1;
     final int actual = result[0];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -45,7 +43,7 @@ public class DepositoCombustivelComEmergenciaTest {
     final int expected = -1;
     final int actual = result[1];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -58,7 +56,7 @@ public class DepositoCombustivelComEmergenciaTest {
     final int expected = -1;
     final int actual = result[2];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -75,7 +73,7 @@ public class DepositoCombustivelComEmergenciaTest {
 
     final boolean hasAlcool = (result[2] + result[3]) >= 0 ? true : false;
 
-    assertTrue((hasAditivo && hasGasolina && hasAlcool));
+    Assertions.assertTrue((hasAditivo && hasGasolina && hasAlcool));
   }
 
   @Test
@@ -85,7 +83,7 @@ public class DepositoCombustivelComEmergenciaTest {
     final int expected = -2;
     final int actual = result[0];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -95,6 +93,6 @@ public class DepositoCombustivelComEmergenciaTest {
     final int expected = -2;
     final int actual = result[0];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 }

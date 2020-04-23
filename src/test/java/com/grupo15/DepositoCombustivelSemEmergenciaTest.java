@@ -1,10 +1,10 @@
-package com.grupo15.app;
+package com.grupo15;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import javax.sound.sampled.SourceDataLine;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 //TESTES SEM EMERGÊNCIA NACIONAL
 public class DepositoCombustivelSemEmergenciaTest {
@@ -27,12 +27,12 @@ public class DepositoCombustivelSemEmergenciaTest {
     dc.recebeAlcool(1000);
     dc.recebeGasolina(1000);
 
-    final int result[] = dc.encomendaCombustivel(1000, true);
+    final int result[] = dc.encomendaCombustivel(1000, false);
 
     final int expected = -1;
     final int actual = result[0];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -40,12 +40,12 @@ public class DepositoCombustivelSemEmergenciaTest {
     dc.recebeAditivo(1000);
     dc.recebeAlcool(1000);
 
-    final int result[] = dc.encomendaCombustivel(1000, true);
+    final int result[] = dc.encomendaCombustivel(1000, false);
 
     final int expected = -1;
     final int actual = result[1];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -53,12 +53,12 @@ public class DepositoCombustivelSemEmergenciaTest {
     dc.recebeAditivo(1000);
     dc.recebeGasolina(10000);
 
-    final int result[] = dc.encomendaCombustivel(1000, true);
+    final int result[] = dc.encomendaCombustivel(1000, false);
 
     final int expected = -1;
     final int actual = result[2];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
@@ -67,7 +67,7 @@ public class DepositoCombustivelSemEmergenciaTest {
     dc.recebeGasolina(700);
     dc.recebeAlcool(250);
 
-    final int result[] = dc.encomendaCombustivel(1000, true);
+    final int result[] = dc.encomendaCombustivel(1000, false);
 
     final boolean hasAditivo = result[0] >= 125 ? true : false;
 
@@ -75,26 +75,26 @@ public class DepositoCombustivelSemEmergenciaTest {
 
     final boolean hasAlcool = (result[2] + result[3]) >= 326 ? true : false;
 
-    assertTrue((hasAditivo && hasGasolina && hasAlcool));
+    Assertions.assertTrue((hasAditivo && hasGasolina && hasAlcool));
   }
 
   @Test
   void entradaInvalida() {
-    final int result[] = dc.encomendaCombustivel(0, true);
+    final int result[] = dc.encomendaCombustivel(0, false);
 
     final int expected = -2;
     final int actual = result[0];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 
   @Test
   void entradaNegativa() {
-    final int result[] = dc.encomendaCombustivel(-25, true);
+    final int result[] = dc.encomendaCombustivel(-25, false);
 
     final int expected = -2;
     final int actual = result[0];
 
-    assertEquals(expected, actual);
+    Assertions.assertEquals(expected, actual);
   }
 }
