@@ -55,7 +55,7 @@ public class DepositoCombustivel {
 
     tGasolina = tGasolina + qtdade > MAX_GASOLINA ? MAX_GASOLINA : tGasolina + qtdade;
 
-    return tAditivo;
+    return tGasolina;
   }
 
   public int recebeAlcool(int qtdade) {
