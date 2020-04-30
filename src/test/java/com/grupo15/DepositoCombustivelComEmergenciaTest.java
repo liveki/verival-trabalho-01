@@ -95,4 +95,5 @@ public class DepositoCombustivelComEmergenciaTest {
 
     Assertions.assertEquals(expected, actual);
   }
+
 }
