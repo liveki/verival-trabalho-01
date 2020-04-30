@@ -42,8 +42,8 @@ Classes de equivalência:
 |   C3   | (tAlcool1 + tAlcool2) |   625    |    626    |    626 ... <= 2500    | ... <= 625  |
 |   C4   |        qtdade         |    0     |     1     |   1 >= ... <= 13000   |  ... <= 0   |
 
-
-<h2>Evolução das classes alvo e driver</h3></br>
+</br>
+<h2>Evolução das classes alvo e driver</h3>
 <ol>
   <li>Assim que os testes e o código foram montados, encontrou-se erros com null pointers. A um primeiro ponto de vista isso não fazia sentido, pois os valores eram do tipo <b>int</b> e em Java, esses valores não tem como ter um valor nulo. Logo descobriu-se que que o <b>@BeforeEach</b> não estava executando, corrigir esse problema foi rápido e resolveu a maioria dos erros.</li>
   <li>O erro seguinte foi resultado de falta de entendimento do valor retornado pelas classes, que foi resolvido ajeitando a forma que os testes coonstruiam o valor <b>expected</b>.</li>
