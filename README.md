@@ -41,3 +41,12 @@ Classes de equivalência:
 |   C2   |       tGasolina       |   2500   |   2501    | 2501 >= ... <= 10.000 | ... <= 2500 |
 |   C3   | (tAlcool1 + tAlcool2) |   625    |    626    |    626 ... <= 2500    | ... <= 625  |
 |   C4   |        qtdade         |    0     |     1     |   1 >= ... <= 13000   |  ... <= 0   |
+
+
+<h2>Evolução das classes alvo e driver</h3></br>
+<ol>
+  <li>Assim que os testes e o código foram montados, encontrou-se erros com null pointers. A um primeiro ponto de vista isso não fazia sentido, pois os valores eram do tipo <b>int</b> e em Java, esses valores não tem como ter um valor nulo. Logo descobriu-se que que o <b>@BeforeEach</b> não estava executando, corrigir esse problema foi rápido e resolveu a maioria dos erros.</li>
+  <li>O erro seguinte foi resultado de falta de entendimento do valor retornado pelas classes, que foi resolvido ajeitando a forma que os testes coonstruiam o valor <b>expected</b>.</li>
+  <li>Com esses erros resolvidos e com os testes em perfeito estado, encontrou-se erros no código da classe alvo. Os erros eram constantes sendo usados em locais errados (e.g. constante MAX_ADITIVO sendo usada no lugar MAX_GASOLINA).</li>
+  <li>Em seguida, notou-se que o código para testar o <b>recebeAlcool</b> também havia dado problema, mas isso se deve ao fato de que o código devolve apenas o valor de um dos tanques, em vez do valor total de alcool. Consequentemente, o valor esperado foi mudado para metade do valor total de alcool e os testes voltaram a correr sem erros.</li>
+</ol>
